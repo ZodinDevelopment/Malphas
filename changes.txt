@@ -1,0 +1,18 @@
+1. Fix navbar and messages icon
+2. make navbar not so big
+3. style backgorund color to some gray
+4. center text on index.html
+5. fix layout of _post.html
+6. Add style to video.html
+7. create seperate template for _comment.html
+8. add route for user directory 
+9. on all templates update styling to match design of home page 
+10. Add button redirecting to send message on messages received
+11. fix carousel on gallery
+12. fix sizing and placement of videos
+13. add contact route 
+14. create content for home page and consider adding seperate route detailing offered services 
+15. create footer with contact information
+16. add conditional navbar links for admin routes like for uploading
+17. create routes and buttons for deleting videos/comments/posts/messages
+18. create a route with in depth walkthrough of the development process demonstrating the various technologies running the app.

@@ -1,0 +1,14 @@
+<table class="table table-hover">
+	<tr>
+		<td width="320px">
+			<video width="320" height="240" controls>
+				<source src="{{ url_for('media.watch', video_id=video.id) }}">
+			Cannot play video
+			</video>
+		</td>
+		<td>
+			<a href="{{ url_for('media.video', video_id=video.id) }}"><h3>{{ video.title }}</h3></a>
+			<p class="text-muted">{{ video.description }}
+		</td>
+	</tr>
+</table> 

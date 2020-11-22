@@ -1,0 +1,17 @@
+<table class="table table-hover">
+	<tr>
+		<td width="70px">
+			<a href="{{ url_for('main.user', username=post.author.username) }}">
+				<img src="{{ post.author.avatar(70) }}">
+			</a>
+		</td>
+			<a href="{{ url_for('main.user', username=post.author.username) }}">
+				{{ post.author.username }}
+			</a>
+			<p class="text-muted">{{ post.timestamp }}</p>
+			<br>
+			<span id="post{{ post.id }}">{{ post.body }}</span>
+		</td>
+	</tr>
+</table>
+		

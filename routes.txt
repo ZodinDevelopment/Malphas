@@ -1,0 +1,19 @@
+index: index.html
+parlor: parlor.html
+user: user.html
+edit_profile: edit_profile.html
+send_message: send_message.html
+messages: messages.html 
+login: auth/login.html
+register: auth/register.html
+reset_password_request.html
+reset_password.html
+404: errors/404.html
+errors/500.html
+media/dev_channel.html
+media/video.html
+media/_video.html
+media/upload_video.html
+ media/upload_photo.html
+ media/gallery.html
+ 
