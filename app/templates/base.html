@@ -8,7 +8,6 @@
 <style>
 body {
 	font: 400 15px Lato, sans-serif;
-	background-color: #f6f6f6;
 	line-height: 1.8;
 	color: #818181;
 }	
@@ -37,6 +36,11 @@ h4 {
 }
 .bg-grey {
 	background-color: #f6f6f6;
+}
+.bg-orange {
+	background-color: #f4511e;
+	color: #fff;
+	font-family: Montserrat, sans-serif;
 }
 .logo-small {
 	color: #f4511e;
@@ -83,7 +87,7 @@ h4 {
 {% endblock %}
 
 {% block content %}
-	<div class="container">
+	<div class="container bg-grey">
 		{% with messages = get_flashed_messages() %}
 		{% if messages %}
 			{% for message in messages %}
