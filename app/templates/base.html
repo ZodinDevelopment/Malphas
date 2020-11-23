@@ -8,10 +8,21 @@
 <style>
 body {
 	font: 400 15px Lato, sans-serif;
-	background-color: #f6f6f6;
 	line-height: 1.8;
 	color: #818181;
+}
+.bg-1 {
+	background-color: #474e5d;
+	color: #ffffff;
 }	
+.bg-2 {
+	background-color: #f4511e;
+	color: #ffffff;
+}
+.bg-3 {
+	background-color: #2f2f2f;
+	color: #fff;
+}
 h2 {
 	font-size: 24px;
 	text-transform: uppercase;
@@ -83,7 +94,7 @@ h4 {
 {% endblock %}
 
 {% block content %}
-	<div class="container">
+	<div class="container bg-1">>
 		{% with messages = get_flashed_messages() %}
 		{% if messages %}
 			{% for message in messages %}
