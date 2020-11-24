@@ -1,68 +1,108 @@
-2020-11-22 09:14:08,777 ERROR: Exception on /user/Zodin [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/zodindev/projects/Malphas/app/main/routes.py", line 61, in user
-    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url, form=form)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
-    return _render(
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/zodindev/projects/Malphas/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/zodindev/projects/Malphas/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/home/zodindev/projects/Malphas/app/templates/base.html", line 94, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/home/zodindev/projects/Malphas/app/templates/user.html", line 17, in block "app_content"
-    {% elif not current_user.is_following(user) %}
-  File "/home/zodindev/projects/Malphas/app/models.py", line 71, in is_following
-    return self.followed.filter(followers.c.followed_id == user.id) > 0
-TypeError: '>' not supported between instances of 'BaseQuery' and 'int'
-2020-11-22 09:15:00,057 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 09:15:19,554 ERROR: Exception on /send_message/Zodin [POST] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/zodindev/projects/Malphas/app/main/routes.py", line 137, in send_message
-    return redirect(url_for('main.user', username=username))
-NameError: name 'username' is not defined
-2020-11-22 09:15:41,692 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
+2020-11-23 13:13:22,584 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:13:36,427 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:13:41,889 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:13:58,983 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:16:36,743 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:17:17,441 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:17:23,239 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:17:47,691 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:17:48,045 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:17:48,214 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:17:48,231 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:24:39,370 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:24:39,477 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:24:39,546 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:24:39,555 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:36:14,799 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:36:24,612 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:36:24,724 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:36:24,765 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 13:36:24,801 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:31:44,455 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:31:44,700 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:31:44,747 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:31:44,778 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:50:54,455 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:50:54,640 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:50:54,688 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 15:50:54,689 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 16:19:50,495 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 16:19:50,671 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 16:19:50,759 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 16:19:50,774 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:38:42,142 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:38:42,149 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:38:42,239 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:38:42,241 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:43:45,793 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:43:46,015 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:43:46,035 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 18:43:46,054 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:23:48,000 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:25:30,605 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:35:04,326 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:42:36,327 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:20,069 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:20,376 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:20,646 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:20,797 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:33,937 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:34,117 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:34,133 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:44:34,501 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:50:32,821 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:50:33,015 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:50:33,045 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:50:33,063 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:54:43,166 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:54:43,310 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:54:43,344 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 19:54:43,358 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:07:46,705 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:07:46,874 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:07:46,980 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:07:46,994 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:12:29,343 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:12:29,486 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:12:29,509 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:12:29,530 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:43:55,334 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:43:55,611 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:43:55,639 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:43:55,662 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:44:58,487 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:44:58,657 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:44:58,689 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:44:58,699 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:53:22,742 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:53:22,851 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:53:22,927 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:53:22,945 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:55:11,648 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:55:11,683 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:55:11,779 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:55:11,786 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:56:55,887 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:56:56,096 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:56:56,161 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:56:56,188 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:59:35,737 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:59:35,871 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:59:35,910 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 20:59:35,933 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:03:11,013 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:03:11,259 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:03:11,309 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:03:11,338 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:04:51,794 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:04:51,943 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:04:51,991 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:04:52,001 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:05:42,697 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:05:42,870 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:05:42,902 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:05:42,914 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:07:10,377 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:07:10,764 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:07:10,766 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]
+2020-11-23 21:07:10,774 INFO: Malphas-Web startup [in /home/zodin/Malphas/app/__init__.py:96]

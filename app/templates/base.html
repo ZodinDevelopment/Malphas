@@ -7,27 +7,42 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 <style>
 body {
+	background-color: #f4511e;
+	color: #414141;
 	font: 400 15px Lato, sans-serif;
 	line-height: 1.8;
-	color: #818181;
+	
+}
+p {
+	color: #414141;
+}
+h1 {
+	font-family: Montserrat, sans-serif;
+	color: #eee;
+
 }	
 h2 {
 	font-size: 24px;
 	text-transform: uppercase;
-	color: #303030;
+	color: #414141;
 	font-weight: 600;
 	margin-bottom: 30px;
 }
 h4 {
 	font-size: 19px;
 	line-height: 1.375em;
-	color: #303030;
+	color: #414141;
 	font-weight: 400;
 	margin-bottom: 30px;
 }
+.container {
+	background-color: #f4511e;
+
+	padding: 15px 15px;
+}
 .jumbotron {
 	background-color: #f4511e;
-	color: #fff;
+	color: #eee;
 	padding: 100px 25px;
 	font-family: Montserrat, sans-serif;
 }
@@ -37,11 +52,7 @@ h4 {
 .bg-grey {
 	background-color: #f6f6f6;
 }
-.bg-orange {
-	background-color: #f4511e;
-	color: #fff;
-	font-family: Montserrat, sans-serif;
-}
+
 .logo-small {
 	color: #f4511e;
 	font-size: 50px;
@@ -87,7 +98,7 @@ h4 {
 {% endblock %}
 
 {% block content %}
-	<div class="container bg-orange">
+	<div class="container">
 		{% with messages = get_flashed_messages() %}
 		{% if messages %}
 			{% for message in messages %}
