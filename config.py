@@ -25,5 +25,22 @@ class Config(object):
     IMAGE_EXTENSIONS = ['jpg', 'gif', 'png']
     VIDEO_EXTENSIONS = ['mp4', 'mov', 'webm']
     AUDIO_EXTENSIONS = ['wav', 'mp3', 'ogg']
-    INDEX_CONTENT = os.path.join(basedir, 'index.txt')
+    INDEX_CONTENT = '''
+        This web application features a fully functional database engine and 
+    is built with the MVC development approach (Model-View-Controller) using 
+    the powerful high-level programming language Python. Python's Flask Web 
+    Framework lets you build robust, interactive, enterprise level web sites
+    with it's modular brick-and-mortar design philosophy. 
+        For instance, this website implements a user authentication system, 
+    private messages to other users, and even allows users to post and follow
+    others. I build websites around its data models. These models are users,
+    customers, products, posts, messages, transactions, anythiing at all.
+    URL's are routed to functions that make queries and entries into the 
+    database so that dynamic content can be rendered and presented to the 
+    user in the form of an interactive website. 
+        The actual layout and appearance of the webpage is arbitrary here
+    and can be customized or completed redesigned. Not only is the front end
+    customizable, but the application's capabilities and purpose can be 
+    easily expanded and changed. 
+    '''
         
