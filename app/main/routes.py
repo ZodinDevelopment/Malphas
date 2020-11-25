@@ -18,8 +18,7 @@ def before_request():
 @bp.route("/")
 @bp.route("/index")
 def index():
-    with open(current_app.config['INDEX_CONTENT'], 'r') as f:
-        text = f.read()
+    text = current_app.config['INDEX_CONTENT'text]
     video = Video.query.order_by(Video.timestamp.desc()).first()
 
     return render_template('index.html', title="Home", text=text, video=video)
