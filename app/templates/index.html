@@ -6,23 +6,21 @@
 	<h1>Zodin Development</h1>
 	<p>Welcome to our platform</p>
 </div>
-	<div class="row bg-orange">
-		<div class="col-lg-2">
-		</div>
-		<div class="col-lg-8">
+	<div class="row">
+		
+		<div class="col-md-6">
 		<h2>About the Malphas Web App and Zodin Development</h2>
 		<h4>More than just a web site, Malphas Web is a dynamic, feature rich web application. Zodin Development builds full stack apps using the Python Programming Language and it's modular microframework.</h4>
 		<br>
 		<p><strong>{{ text }}</strong></p>
 		</div>
-		<div class="col-lg-2">
+		<div class="col-md-6">
+		{% if video %}
+			{% include 'media/_video.html' %}
+		{% endif %}
 		</div>
 	</div>
-	{% if video %}
-	<div class="row bg-orange">
-		{% include 'media/_video.html' %}
-	</div>
-	{% endif %}
+
 {% endblock %}
 
 
