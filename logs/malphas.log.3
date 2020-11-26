@@ -1,95 +1,47 @@
-2020-11-22 08:38:35,013 ERROR: Exception on /upload_photo [POST] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-11-25 19:16:12,285 ERROR: Exception on /favicon.ico [GET] [in /home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/zodindev/projects/Malphas/app/media/routes.py", line 110, in upload_photo
-    f.save(os.path.join(current_app.config['UPLOAD_FOLDER'], 'images', filename))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/werkzeug/datastructures.py", line 3066, in save
-    dst = open(dst, "wb")
-FileNotFoundError: [Errno 2] No such file or directory: '/home/zodindev/projects/Malphas/uploads/images/asdf.jpg'
-2020-11-22 08:38:57,213 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 08:39:20,069 ERROR: Exception on /gallery [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/app/media/routes.py", line 131, in gallery
-    return render_template('media/gallery.html', title="Gallery", photos=photos.items, next_url=next_url, prev_url=prev_url)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 127, in load
-    code = environment.compile(source, name, filename)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1816, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1744, in handle_http_exception
+    return handler(e)
+  File "/home/zodindev/Malphas/app/errors/handlers.py", line 8, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/zodindev/projects/Malphas/app/templates/media/gallery.html", line 28, in template
-    {% endfor %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2020-11-22 08:39:49,533 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 08:39:52,305 ERROR: Exception on /gallery [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/app/media/routes.py", line 131, in gallery
-    return render_template('media/gallery.html', title="Gallery", photos=photos.items, next_url=next_url, prev_url=prev_url)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 127, in load
-    code = environment.compile(source, name, filename)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+  File "/home/zodindev/Malphas/app/templates/errors/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/zodindev/projects/Malphas/app/templates/media/gallery.html", line 28, in template
-    {% endfor %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2020-11-22 08:40:13,916 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 09:12:14,520 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
+  File "/home/zodindev/Malphas/app/templates/base.html", line 105, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endif'. The innermost block that needs to be closed is 'if'.
+2020-11-25 19:17:29,406 INFO: Malphas-Web startup [in /home/zodindev/Malphas/app/__init__.py:96]

@@ -1,68 +1,136 @@
-2020-11-22 09:14:08,777 ERROR: Exception on /user/Zodin [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-11-25 19:17:31,277 ERROR: Exception on / [GET] [in /home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/zodindev/projects/Malphas/app/main/routes.py", line 61, in user
-    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url, form=form)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
-    return _render(
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/zodindev/projects/Malphas/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/zodindev/projects/Malphas/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/home/zodindev/projects/Malphas/app/templates/base.html", line 94, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/home/zodindev/projects/Malphas/app/templates/user.html", line 17, in block "app_content"
-    {% elif not current_user.is_following(user) %}
-  File "/home/zodindev/projects/Malphas/app/models.py", line 71, in is_following
-    return self.followed.filter(followers.c.followed_id == user.id) > 0
-TypeError: '>' not supported between instances of 'BaseQuery' and 'int'
-2020-11-22 09:15:00,057 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 09:15:19,554 ERROR: Exception on /send_message/Zodin [POST] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/pymysql/connections.py", line 569, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 493, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/pymysql/connections.py", line 327, in __init__
+    self.connect()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/pymysql/connections.py", line 619, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
     raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/zodindev/projects/Malphas/app/main/routes.py", line 137, in send_message
-    return redirect(url_for('main.user', username=username))
-NameError: name 'username' is not defined
-2020-11-22 09:15:41,692 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
+  File "/home/zodindev/Malphas/app/main/routes.py", line 22, in index
+    video = Video.query.order_by(Video.timestamp.desc()).first()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3429, in first
+    ret = list(self[0:1])
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3203, in __getitem__
+    return list(res)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3556, in _execute_and_instances
+    conn = self._get_bind_args(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3571, in _get_bind_args
+    return fn(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1138, in connection
+    return self._connection_for_bind(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1146, in _connection_for_bind
+    return self.transaction._connection_for_bind(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 493, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/pymysql/connections.py", line 327, in __init__
+    self.connect()
+  File "/home/zodindev/Malphas/venv/lib/python3.8/site-packages/pymysql/connections.py", line 619, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)

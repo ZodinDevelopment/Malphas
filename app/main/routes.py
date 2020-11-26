@@ -169,3 +169,6 @@ def notifications():
 
 
     
+@bp.route('/contact')
+def contact():
+    return 404

@@ -1,4 +1,4 @@
-2020-11-22 08:22:35,640 ERROR: Exception on /user/Zodin [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-11-22 09:14:08,777 ERROR: Exception on /user/Zodin [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,43 +14,39 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/zodindev/projects/Malphas/app/main/routes.py", line 54, in user
-    page, current_app.config['ITEMS_PER_PAGE'], False
-NameError: name 'page' is not defined
-2020-11-22 08:22:59,890 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 08:23:18,000 ERROR: Exception on /dev_channel [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/app/media/routes.py", line 26, in dev_channel
-    return render_template('media/dev_channel.html', title="Dev Channel", videos=videos.items, next_url=next_url, prev_url=prev_url)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: media/dev_channel.html
-2020-11-22 08:27:21,151 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 08:28:53,367 ERROR: Exception on /upload_video [POST] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
+  File "/home/zodindev/projects/Malphas/app/main/routes.py", line 61, in user
+    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url, form=form)
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/zodindev/projects/Malphas/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/zodindev/projects/Malphas/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/zodindev/projects/Malphas/app/templates/base.html", line 94, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/zodindev/projects/Malphas/app/templates/user.html", line 17, in block "app_content"
+    {% elif not current_user.is_following(user) %}
+  File "/home/zodindev/projects/Malphas/app/models.py", line 71, in is_following
+    return self.followed.filter(followers.c.followed_id == user.id) > 0
+TypeError: '>' not supported between instances of 'BaseQuery' and 'int'
+2020-11-22 09:15:00,057 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
+2020-11-22 09:15:19,554 ERROR: Exception on /send_message/Zodin [POST] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -66,46 +62,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/zodindev/projects/Malphas/app/media/routes.py", line 79, in upload_video
-    f.save(os.path.join(current_app.config['UPLOAD_FOLDER'], 'videos', filename))
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/werkzeug/datastructures.py", line 3066, in save
-    dst = open(dst, "wb")
-FileNotFoundError: [Errno 2] No such file or directory: '/home/zodindev/projects/Malphas/uploads/videos/2020-11-22-082828.webm'
-2020-11-22 08:29:04,722 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 08:29:28,443 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 08:30:00,592 ERROR: Exception on /video/1 [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/app/media/routes.py", line 31, in video
-    video = Video.query.get(id=video_id).first_or_404()
-TypeError: get() got an unexpected keyword argument 'id'
-2020-11-22 08:30:53,286 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
-2020-11-22 08:30:57,380 ERROR: Exception on /video/1 [GET] [in /home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/zodindev/projects/Malphas/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/zodindev/projects/Malphas/app/media/routes.py", line 31, in video
-    video = Video.query.get(id=video_id).first_or_404()
-TypeError: get() got an unexpected keyword argument 'id'
-2020-11-22 08:31:40,613 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
+  File "/home/zodindev/projects/Malphas/app/main/routes.py", line 137, in send_message
+    return redirect(url_for('main.user', username=username))
+NameError: name 'username' is not defined
+2020-11-22 09:15:41,692 INFO: Malphas-Web startup [in /home/zodindev/projects/Malphas/app/__init__.py:96]
